@@ -1,0 +1,73 @@
+<div class="container">
+    <img src="https://m.media-amazon.com/images/G/01/rainier/nav/SellerCentral_Bliss._CB485924389_.png"
+        alt="Amazon Seller Central">
+    <form class="registration-form" [formGroup]="registerForm" (ngSubmit)="registerSeller()">
+        <h1>Create account</h1>
+        <div class="div">
+            <label for="name">Your name</label>
+            <input type="text" name="fullName" placeholder="First and last name" formControlName="fullName">
+            @if (fullName.invalid && (fullName.dirty || fullName.touched)) {
+                @if (fullName.errors?.['pattern']) {
+                    <small>Wrong Name*</small>
+                }
+                @if (fullName.errors?.['required']) {
+                    <small>Required*</small>
+                }
+            }
+        </div>
+
+        <div class="div">
+            <label for="email">Email</label>
+            <input type="email" name="email" formControlName="email">
+            @if (email.invalid && (email.dirty || email.touched)) {
+                @if (email.errors?.['required']) {
+                    <small>Required*</small>
+                }
+                @if (email.errors?.['email']) {
+                    <small>Wrong email*</small>
+                }
+            }
+        </div>
+
+        <div class="div">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="At least 6 characters" formControlName="password">
+            @if (password.invalid && (password.dirty || password.touched)) {
+                @if (password.errors?.['required']) {
+                    <small>Required*</small>
+                }
+                @if (password.errors?.['pattern']) {
+                    <small>Password should be strong*</small>
+                }
+            }
+        </div>
+
+        <div class="div">
+            <label for="password">Re-enter password</label>
+            <input type="password" name="password" formControlName="confirmPassword">
+
+            @if (confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)) {
+                <small>Required*</small>
+            }
+
+            @if (confirmPassword.value !== password.value) {
+                <small>Password should match</small>
+            }
+        </div>
+
+        <div class="div">
+            <input type="submit" value="Next" class="next" [disabled]="registerForm.invalid">
+        </div>
+
+        <p>By continuing, you agree to Amazon's <a href="">Condition of Use</a> and <a href="">Privacy Notice.</a></p>
+
+        <p-divider align="center" type="solid">
+            <p>Already have an account?</p>
+        </p-divider>
+
+        <div class="div">
+            <p-toast></p-toast>
+            <input type="button" value="Login" class="login" routerLink="/seller-central/login">
+        </div>
+    </form>
+</div>

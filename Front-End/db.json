@@ -1,0 +1,405 @@
+{
+  "products": [
+    {
+      "id": "8",
+      "image": "https://m.media-amazon.com/images/I/91n8gWbqEBS._AC_UL320_.jpg",
+      "title": "Men's Icon Slash Gradient T-shirt",
+      "brand": "Hurley",
+      "price": "26.00",
+      "discountedPrice": "22.61",
+      "category": "Clothing, Shoes & Jewelry"
+    },
+    {
+      "id": "9",
+      "image": "https://m.media-amazon.com/images/I/71e0w6RNEjL._AC_UL320_.jpg",
+      "title": "Men's Navtech Colorblock Tee",
+      "brand": "Nautica",
+      "price": "24.99",
+      "discountedPrice": "18.38",
+      "category": "Clothing, Shoes & Jewelry"
+    },
+    {
+      "id": "10",
+      "image": "https://m.media-amazon.com/images/I/418lGdg2tBL._AC_UL320_.jpg",
+      "title": "mens Ultimate Crewneck T-Shirt",
+      "brand": "Hanes",
+      "price": "8.22",
+      "discountedPrice": "6.85",
+      "category": "Clothing, Shoes & Jewelry"
+    },
+    {
+      "id": "e13a",
+      "image": "https://m.media-amazon.com/images/I/71tK+8tpRiL._AC_SX569_.jpg",
+      "title": "Hanes Big, Originals Lightweight Cotton Tee, Crewneck T-Shirt for Men, Available in Tall",
+      "brand": "Hanes",
+      "price": 14,
+      "discountedPrice": 10,
+      "category": "Clothing, Shoes & Jewelry"
+    },
+    {
+      "id": "7f12",
+      "image": "https://m.media-amazon.com/images/I/91k1tkPQc6L._AC_SY550_.jpg",
+      "title": "Loose Fit Heavyweight Short-Sleeve Logo Graphic T-Shirt",
+      "brand": "Carhartt",
+      "price": 29.99,
+      "discountedPrice": 24.99,
+      "category": "Clothing, Shoes & Jewelry"
+    },
+    {
+      "id": "f496",
+      "image": "https://m.media-amazon.com/images/I/71TDabt93DL._AC_SX569_.jpg",
+      "title": "Russell Athletic Men's Dri-Power Cotton Blend Long Sleeve Tees, Moisture Wicking, Odor Protection, UPF 30+, Sizes S-3x",
+      "brand": "Russell Athletic",
+      "price": 9.99,
+      "discountedPrice": 8.59,
+      "category": "Clothing, Shoes & Jewelry"
+    },
+    {
+      "id": "3ef8",
+      "image": "https://m.media-amazon.com/images/I/51f1nf53sDL._AC_SX466_.jpg",
+      "title": "Comfort Colors Adult Short Sleeve Tee, Style G1717",
+      "brand": "Comfort Colors",
+      "price": 9.66,
+      "discountedPrice": 7.81,
+      "category": "Clothing, Shoes & Jewelry"
+    },
+    {
+      "id": "12e4",
+      "image": "https://m.media-amazon.com/images/I/81ta6NtPuVL._AC_SY550_.jpg",
+      "title": "Champion Tank, Classic Graphic Muscle Tee, Sleeveless T-Shirt for Men (Reg. Or Big & Tall)",
+      "brand": "Champion",
+      "price": 15,
+      "discountedPrice": 12,
+      "category": "Clothing, Shoes & Jewelry"
+    },
+    {
+      "id": "11d8",
+      "image": "https://m.media-amazon.com/images/I/61U3JMQcXBL._AC_SY550_.jpg",
+      "title": "Gildan Large Men's DryBlend Classic T-Shirt",
+      "brand": "Gildan",
+      "price": 10.66,
+      "discountedPrice": 7.21,
+      "category": "Clothing, Shoes & Jewelry"
+    },
+    {
+      "id": "482f",
+      "image": "https://m.media-amazon.com/images/I/61znD1dfICL._AC_SX679_.jpg",
+      "title": "Under Armour Men's Global Foundation Short Sleeve T Shirt",
+      "brand": "Under Armour",
+      "price": 25.99,
+      "discountedPrice": 22.4,
+      "category": "Clothing, Shoes & Jewelry"
+    },
+    {
+      "id": "e190",
+      "image": "https://m.media-amazon.com/images/I/61d-EGhcLvS._AC_SX466_.jpg",
+      "title": "INTO THE AM Mens T Shirt with Logo - Short Sleeve Crew Neck Soft Fitted Tees S - 4XL Fresh Classic Basic Tshirts",
+      "brand": "INTO THE AM",
+      "price": 25.99,
+      "discountedPrice": 23.95,
+      "category": "Clothing, Shoes & Jewelry"
+    },
+    {
+      "id": "11",
+      "image": "https://m.media-amazon.com/images/I/51rC2bMIM5L._SX300_SY300_QL70_FMwebp_.jpg",
+      "title": "BetterBody Foods Organic Chia Seeds 2 lbs, 32 Oz, with Omega-3, Non-GMO, Gluten Free, Keto Diet Friendly, Vegan, Good Source of Fiber",
+      "brand": "BetterBody",
+      "price": 15.99,
+      "discountedPrice": 12.51,
+      "category": "Grocery & Gourmet Food"
+    },
+    {
+      "id": "12",
+      "image": "https://m.media-amazon.com/images/I/71a4Ep+Tf2L._SX679_.jpg",
+      "title": "Virgin Coconut Oil, 16 fl oz - Non-GMO, Cold-Pressed and Unrefined Coconut Oil Organic Certified - Natural Flavour Coconut Oil for Cooking and Baking",
+      "brand": "Viva Naturals",
+      "price": 8.99,
+      "discountedPrice": 6.88,
+      "category": "Grocery & Gourmet Food"
+    },
+    {
+      "id": "13",
+      "image": "https://m.media-amazon.com/images/I/81R-aAwCKWL._SX679_PIbundle-12,TopRight,0,0_AA679SH20_.jpg",
+      "title": "Vita Coco Coconut Water, Pure Organic | Refreshing Coconut Taste | Natural Electrolytes | Vital Nutrients | 11.1 Oz (Pack Of 12)",
+      "brand": "Vita Coco",
+      "price": 8.99,
+      "discountedPrice": 6.88,
+      "category": "Grocery & Gourmet Food"
+    },
+    {
+      "id": "14",
+      "image": "https://m.media-amazon.com/images/I/71BcPVov36L._SX679_.jpg",
+      "title": "Four Sigmatic Think Mushroom Coffee | Organic Ground Coffee with Lion's Mane Mushroom and Chaga Mushroom | 12oz Bag",
+      "brand": "Four Sigmatic",
+      "price": 16.33,
+      "discountedPrice": 14.25,
+      "category": "Grocery & Gourmet Food"
+    },
+    {
+      "id": "15",
+      "image": "https://m.media-amazon.com/images/I/41wp-Vdp5OL._SX300_SY300_QL70_FMwebp_.jpg",
+      "title": "Simply Organic Ceylon Ground Cinnamon, 2.08 Ounce, Non-GMO Organic Cinnamon Powder",
+      "brand": "Simply Organic",
+      "price": 9.99,
+      "discountedPrice": 6.11,
+      "category": "Grocery & Gourmet Food"
+    },
+    {
+      "id": "16",
+      "image": "https://m.media-amazon.com/images/I/51qTGQN2uyL._SX300_SY300_QL70_FMwebp_.jpg",
+      "title": "SKIPPY Creamy Peanut Butter, 28 oz",
+      "brand": "SKIPPY",
+      "price": 5.21,
+      "discountedPrice": 4.25,
+      "category": "Grocery & Gourmet Food"
+    },
+    {
+      "id": "17",
+      "image": "https://m.media-amazon.com/images/I/814XtD1-71L._SX679_PIbundle-12,TopRight,0,0_AA679SH20_.jpg",
+      "title": "Sparkling Ice, Black Raspberry Sparkling Water, Zero Sugar Flavored Water, with Vitamins and Antioxidants, Low Calorie Beverage, 17 fl oz Bottles (Pack of 12)",
+      "brand": "Sparkling Ice",
+      "price": 5.21,
+      "discountedPrice": 4.25,
+      "category": "Grocery & Gourmet Food"
+    },
+    {
+      "id": "18",
+      "image": "https://m.media-amazon.com/images/I/51EaZkO0-aL._AC_SY879_.jpg",
+      "title": "Stanley Quencher H2.0 FlowState Stainless Steel Vacuum Insulated Tumbler with Lid and Straw for Water, Iced Tea or Coffee",
+      "brand": "Stanley",
+      "price": 55.66,
+      "discountedPrice": 45.00,
+      "category": "Sports & Outdoors"
+    },
+    {
+      "id": "19",
+      "image": "https://m.media-amazon.com/images/I/619pp3P8qvL._AC_SX679_.jpg",
+      "title": "CamelBak Podium Bike Water Bottle 24oz, Stone Blue",
+      "brand": "CamelBak",
+      "price": 15.99,
+      "discountedPrice": 13.00,
+      "category": "Sports & Outdoors"
+    },
+    {
+      "id": "20",
+      "image": "https://m.media-amazon.com/images/I/81SEDyzAcEL._AC_SX679_.jpg",
+      "title": "CamelBak Horizon 12oz Camp Mug - Insulated Stainless Steel - Tri-Mode Lid - Black",
+      "brand": "CamelBak",
+      "price": 22.40,
+      "discountedPrice": 25.00,
+      "category": "Sports & Outdoors"
+    },
+    {
+      "id": "21",
+      "image": "https://m.media-amazon.com/images/I/81QSr0lV3LL._AC_SX679_.jpg",
+      "title": "BELL Bell Marvel Hero Helmet",
+      "brand": "BELL",
+      "price": 49.36,
+      "discountedPrice": 39.99,
+      "category": "Sports & Outdoors"
+    },
+    {
+      "id": "22",
+      "image": "https://m.media-amazon.com/images/I/81jynb9VpvL._AC_SX466_.jpg",
+      "title": "Maelstrom Hiking Backpack,Camping Backpack,40L Waterproof Hiking Daypack with Rain Cover,Lightweight Travel Backpack,Black",
+      "brand": "Maelstrom",
+      "price": 50.00,
+      "discountedPrice": 39.99,
+      "category": "Sports & Outdoors"
+    },
+    {
+      "id": "23",
+      "image": "https://m.media-amazon.com/images/I/81O7mf19NeL._AC_SX679_.jpg",
+      "title": "Multipet Plush Dog Toy, Lambchop, 10 Inches, White/Tan, Small",
+      "brand": "Multipet",
+      "price": 9.99,
+      "discountedPrice": 5.04,
+      "category": "Pet Supplies"
+    },
+    {
+      "id": "24",
+      "image": "https://m.media-amazon.com/images/I/81DNZAmP0BL._AC_SX679_.jpg",
+      "title": "Hartz UltraGuard Pro Reflective Flea & Tick Collar for Dogs and Puppies, 7 Month Flea and Tick Prevention Per Collar, 1 Count",
+      "brand": "Hartz",
+      "price": 10.24,
+      "discountedPrice": 7.64,
+      "category": "Pet Supplies"
+    },
+    {
+      "id": "26",
+      "image": "https://m.media-amazon.com/images/I/71z1FKZRqsL._AC_SX679_.jpg",
+      "title": "9Lives Indoor Complete Cat Food, 20 Pound Bag",
+      "brand": "9Lives",
+      "price": 21.55,
+      "discountedPrice": 18.51,
+      "category": "Pet Supplies"
+    },
+    {
+      "id": "27",
+      "image": "https://m.media-amazon.com/images/I/81Nzb6x2e9L.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "title": "TetraPond Spring & Fall Diet Floating Pond Sticks, 1.72-Pound",
+      "brand": "TetraPond",
+      "price": 15.22,
+      "discountedPrice": 11.99,
+      "category": "Pet Supplies"
+    },
+    {
+      "id": "28",
+      "image": "https://m.media-amazon.com/images/I/614jmTn7HhL._AC_SX679_.jpg",
+      "title": "Tetra EasyStrips 6-In-1 aquarium Test Strips, Water Testing (19542)",
+      "brand": "Tetra",
+      "price": 35.91,
+      "discountedPrice": 25.79,
+      "category": "Pet Supplies"
+    },
+    {
+      "id": "29",
+      "image": "https://m.media-amazon.com/images/I/81q4JxjG2TL._AC_SX679_.jpg",
+      "title": "Wild Harvest WH-83540 Wild Harvest Advanced Nutrition Diet for Nutrition Diet for Parakeets, 4.5-Pound",
+      "brand": "Wild Harvest",
+      "price": 11.55,
+      "discountedPrice": 9.97,
+      "category": "Pet Supplies"
+    },
+    {
+      "id": "30",
+      "image": "https://m.media-amazon.com/images/I/61p7dffEcYS._AC_SX679_.jpg",
+      "title": "Chicken Perch Strong Pine Wooden Chick Jungle Gym Roosting Bar, Chick Perch Toys for Coop and Brooder for Large Bird Baby Chicks Parrot (Small)",
+      "brand": "GINTUTO",
+      "price": 12.55,
+      "discountedPrice": 10.59,
+      "category": "Pet Supplies"
+    },
+    {
+      "id": "31",
+      "image": "https://m.media-amazon.com/images/I/61Vl+b7DdIL._AC_SY300_SX300_.jpg",
+      "title": "Plus Gel Moxidectin/ Praziquantel Horse Dewormer, Late Grazing Season recommended for Horses and Ponies 6 months and older, 0.5oz Sure-Dial Syringe",
+      "brand": "Quest",
+      "price": 35.91,
+      "discountedPrice": 25.79,
+      "category": "Pet Supplies"
+    },
+    {
+      "id": "32",
+      "image": "https://m.media-amazon.com/images/I/71UUO1Pi6UL._AC_SX679_.jpg",
+      "title": "Formula 707 Calming Equine Supplement 5LB Bucket – Anxiety Relief and Enhanced Focus for Horses – L-Tryptophan, Thiamine & Magnesium",
+      "brand": "Formula 707",
+      "price": 35.91,
+      "discountedPrice": 25.79,
+      "category": "Pet Supplies"
+    },
+    {
+      "id": "33",
+      "image": "https://m.media-amazon.com/images/I/71rBzkIE0pL._AC_SX679_.jpg",
+      "title": "Ceiling Fans with Lights and Remote, Black Ceiling Fan with Remote, Outdoor Fan with Lights for Patio Farmhouse Bedroom，52 Inch",
+      "brand": "Biukis",
+      "price": 110.33,
+      "discountedPrice": 95.66,
+      "category": "Tools & Home Improvement"
+    },
+    {
+      "id": "34",
+      "image": "https://m.media-amazon.com/images/I/710fPOba6aL._AC_SX679_.jpg",
+      "title": "LEDIARY Low Profile Ceiling Fans with Lights, Flush Mount Modern Ceiling Fan and Remote Control, 19.7 Inches LED Bladeless Ceiling Fans, Stepless Dimmable 3 Colors and 6 Speeds - Gold",
+      "brand": "LEDIARY",
+      "price": 129.52,
+      "discountedPrice": 116.99,
+      "category": "Tools & Home Improvement"
+    },
+    {
+      "id": "35",
+      "image": "https://m.media-amazon.com/images/I/71rJnaUkpjL._AC_SX679_.jpg",
+      "title": "HBTower Ladder, A Frame 4 Step Extension Ladder, 17 Ft Multi Position Ladder with Removable Tool Tray and Stabilizer Bar, 330 lbs Capacity Telescoping Ladder for Household and Outdoor Work",
+      "brand": "HBTower",
+      "price": 160.25,
+      "discountedPrice": 159.99,
+      "category": "Tools & Home Improvement"
+    },
+    {
+      "id": "36",
+      "image": "https://m.media-amazon.com/images/I/71dix405ozL._AC_SX679_.jpg",
+      "title": "Ladder, A Frame 4 Step Ladder Extension, 14 FT Anti-Slip Multi Position & Storage Folding Ladder, 330 lbs Security Load Telescoping Aluminum Ladders for Stairs Home Indoor Outdoor Roof",
+      "brand": "LANBITOU",
+      "price": 185.25,
+      "discountedPrice": 159.66,
+      "category": "Tools & Home Improvement"
+    },
+    {
+      "id": "37",
+      "image": "https://m.media-amazon.com/images/I/71rdfhSrXdL._AC_SX679_.jpg",
+      "title": "Flicker-Free Frosted Dimmable A19 Light Bulb - EyeComfort Technology - 800 Lumen - Soft White (2700K) - 8W=60W - E26 Base - Title 20 Certified - Ultra Definition - Indoor - 4-Pack",
+      "brand": "Philips Led",
+      "price": 18.54,
+      "discountedPrice": 16.39,
+      "category": "Tools & Home Improvement"
+    },
+    {
+      "id": "38",
+      "image": "https://m.media-amazon.com/images/I/61g-N2RKcBL._AC_SX679_PIbundle-6,TopRight,0,0_SH20_.jpg",
+      "title": "Sunco Lighting 6 Pack BR30 Light Bulb LED Indoor Flood Lights, 5000K Daylight, 850 Lumens E26 Base, 25,000 Lifetime Hours, Interior Dimmable Recessed Can Energy Star 11W Equivalent 65W",
+      "brand": "Sunco Lighting",
+      "price": 35.91,
+      "discountedPrice": 25.79,
+      "category": "Tools & Home Improvement"
+    },
+    {
+      "id": "39",
+      "image": "https://m.media-amazon.com/images/I/511h3TxGRcL._AC_SX679_.jpg",
+      "title": "Metabo HPT Brad Nailer Kit | Pro Preferred Brand of Pneumatic Nailers | 18 Gauge | Accepts 5/8 to 2-Inch Brad Nails | Ideal for Trim Work, Furniture Building & Other Finish Applications | NT50AE2",
+      "brand": "Metabo HPT",
+      "price": 64.25,
+      "discountedPrice": 59.00,
+      "category": "Tools & Home Improvement"
+    },
+    {
+      "id": "40",
+      "image": "https://m.media-amazon.com/images/I/71GKEL4H8mL._AC_SX679_.jpg",
+      "title": "Makita XSS02Z 18V LXT Lithium-Ion Cordless 6-1/2 Inches Circular Saw, Tool Only",
+      "brand": "Makita",
+      "price": 250.65,
+      "discountedPrice": 225.99,
+      "category": "Tools & Home Improvement"
+    },
+    {
+      "id": "41",
+      "image": "https://m.media-amazon.com/images/I/71r30ORJYIL._AC_SX679_.jpg",
+      "title": "AVID POWER 20V MAX Lithium lon Cordless Drill Set, Power Drill Kit with Battery and Charger, 3/8-Inch Keyless Chuck, Variable Speed, 16 Position and 22pcs Drill Bits (Pink)",
+      "brand": "AVID POWER",
+      "price": 45.95,
+      "discountedPrice": 37.38,
+      "category": "Tools & Home Improvement"
+    }
+  ],
+  "seller-authentication": [
+    {
+      "id": "cdb9",
+      "fullName": "Sham Sundar",
+      "email": "email@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "03ed",
+      "fullName": "Sham Sundarsdf",
+      "email": "shampr.seo@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "386c",
+      "fullName": "Sham Sundarafsdf",
+      "email": "ssdf@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "1a06",
+      "fullName": "Sham",
+      "email": "sham@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "c840",
+      "fullName": "Rahul Kumar",
+      "email": "rahul@gmail.com",
+      "password": "Rahul_K@321"
+    }
+  ]
+}

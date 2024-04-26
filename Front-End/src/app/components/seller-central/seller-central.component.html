@@ -1,0 +1,40 @@
+<div class="container">
+    <button><a routerLink="/seller-central/add-product">Add New Product</a></button>
+    <button class="button" (click)="logOut()"><a>Logout</a></button>
+</div>
+
+<div class="card">
+    <p-table [value]="products" [tableStyle]="{'min-width': '60rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Brand</th>
+                <th>Reviews</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>
+                    <p class="product-title">{{product.title | slice:0:59}}...</p>
+                </td>
+                <td><img [src]="product.image" [alt]="product.name" width="100" class="shadow-4" /></td>
+                <td>{{product.discountedPrice | currency:'USD'}}</td>
+                <td>{{product.brand}}</td>
+                <td><p-rating [(ngModel)]="ratingValue" [readonly]="true" [cancel]="false"></p-rating></td>
+                <td> <button><a [routerLink]="'/seller-central/edit-product/'+product.id">Edit</a></button> </td>
+                <td> <button (click)="deleteProduct(this.product.id)"><a><i class="pi pi-times"></i></a></button> </td>
+                <p-toast></p-toast>
+            </tr>
+
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="flex align-items-center justify-content-between">
+                In total there are {{products ? products.length : 0 }} products.
+            </div>
+        </ng-template>
+    </p-table>
+</div>

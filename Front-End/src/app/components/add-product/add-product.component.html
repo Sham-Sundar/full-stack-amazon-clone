@@ -1,0 +1,57 @@
+<div class="form-area">
+    <form action="" class="form" (ngSubmit)="addProduct()" #addProductForm="ngForm">
+
+        <div class="input-container">
+            <input type="text" name="title" [(ngModel)]="product.title" id="" placeholder="Product Title" required
+                #title="ngModel" />
+            @if (title.invalid && title.touched) {
+            <small>*required</small>
+            }
+        </div>
+
+        <div class="input-container">
+            <input type="text" name="brand" [(ngModel)]="product.brand" id="" placeholder="Brand Name" required
+                #brand="ngModel">
+            @if (brand.invalid && brand.touched) {
+            <small>*required</small>
+            }
+        </div>
+
+        <div class="input-container">
+            <input type="text" name="category" [(ngModel)]="product.category" id="" placeholder="Category" required
+                #category="ngModel">
+            @if (category.invalid && category.touched) {
+            <small>*required</small>
+            }
+        </div>
+
+        <div class="input-container">
+            <input type="text" name="image" [(ngModel)]="product.image" id="" placeholder="Image URL" required
+                #image="ngModel">
+            @if (image.invalid && image.touched) {
+            <small>*required</small>
+            }
+        </div>
+
+        <div class="price-inputs">
+            <div class="input-container">
+                <input type="number" name="discountedPrice" [(ngModel)]="product.discountedPrice" id=""
+                    placeholder="Discounted Price" required #discountedPrice="ngModel">
+                @if (discountedPrice.invalid && discountedPrice.touched) {
+                <small>*required</small>
+                }
+            </div>
+            <div class="input-container">
+                <input type="number" name="price" [(ngModel)]="product.price" id="" placeholder="Product Price" required
+                    #price="ngModel">
+                @if (price.invalid && price.touched) {
+                <small>*required</small>
+                }
+            </div>
+        </div>
+        <div class="input-container">
+            <p-toast></p-toast>
+            <input type="submit" id="submit" value="Add Product" [disabled]="addProductForm.invalid">
+        </div>
+    </form>
+</div>

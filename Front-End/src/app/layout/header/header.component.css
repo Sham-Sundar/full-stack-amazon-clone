@@ -1,0 +1,145 @@
+/* Primary Header */
+
+.header-area {
+    margin-bottom: 20px;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: #131921;
+    height: 60px;
+    padding: 30px 15px;
+}
+
+.web-logo {
+    cursor: pointer;
+}
+
+.web-logo img {
+    height: 30px;
+}
+
+.button {
+    width: auto;
+    padding: 10px 20px;
+    color: black;
+    background-color: #F2941B;
+    border-radius: 5px;
+    border: none;
+
+    &&:hover {
+        background-color: #f9ac48;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+
+.menus {
+    display: flex;
+    gap: 20px;
+}
+
+.pi-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.box-hover {
+    border: 1px solid transparent;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    
+    &&:hover {
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 3px;
+    }
+}
+
+/* Sub-Header */
+
+.sub-header {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    height: 40px;
+    color: white;
+    background-color: #232F3E;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.all-button {
+    background-color: #232F3E;
+}
+
+.pi-user {
+    font-size: 18px;
+}
+
+.location {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    .cart-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        height: 100%;
+
+        img {
+            width: 35px;
+        }
+    }
+
+    .icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        height: 100%;
+
+        i {
+            color: white;
+            font-size: 15px;
+            padding-bottom: 4px;
+        }
+    }
+
+    .address {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: end;
+        height: 100%;
+
+        span {
+            color:#CCCCCC;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        p {
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+        }
+    }
+}

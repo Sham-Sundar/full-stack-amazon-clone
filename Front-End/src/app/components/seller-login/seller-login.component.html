@@ -1,0 +1,50 @@
+<div class="container">
+    <img src="https://m.media-amazon.com/images/G/01/rainier/nav/SellerCentral_Bliss._CB485924389_.png"
+        alt="Amazon Seller Central">
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="loginSeller()">
+        <h1>Get started selling on Amazon</h1>
+        <div class="div">
+            <label for="email">Email or mobile phone number</label>
+            <input type="email" name="email" id="email" formControlName="email">
+            @if (email.invalid && (email.dirty || email.touched)) {
+                @if (email.errors?.['required']) {
+                    <small>Required*</small>
+                }
+                @if (email.errors?.['email']) {
+                    <small>Wrong email*</small>
+                }
+            }
+        </div>
+
+        <div class="div">
+            <div class="password">
+                <label for="password">Password</label>
+                <a href="">Forgot your password?</a>
+            </div>
+            <input type="password" name="password" id="password" formControlName="password">
+            @if (password.invalid && (password.dirty || password.touched)) {
+                <small>Required*</small>
+            }
+        </div>
+
+        <div class="div">
+            <p-toast></p-toast>
+            <input type="submit" value="Next" class="next" [disabled]="loginForm.invalid">
+        </div>
+
+        <p>By continuing, you agree to Amazon's <a href="">Condition of Use</a> and <a href="">Privacy Notice.</a></p>
+
+        <div class="check">
+            <input type="checkbox">
+            <p>Keep me signed in</p>
+        </div>
+
+        <p-divider align="center" type="solid">
+            <p>New to Amazon?</p>
+        </p-divider>
+
+        <div class="div">
+            <input type="button" value="Create your Amazon account" class="created-account" routerLink="/seller-central/register">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="main-container">
+
+    <div class="products-container">
+
+        @for(item of filteredProducts; track item.id){
+        <div class="product-cart" (click)="onClickProduct(item.id!)">
+            <div class="product-image">
+                <img [src]="item.image" alt="product-image">
+            </div>
+            <p class="product-brand">{{item.brand}}</p>
+            <p class="product-title">{{item.title | slice:0:59}}...</p>
+            <p-rating [(ngModel)]="ratingValue" [readonly]="true" [cancel]="false"></p-rating>
+            <div class="price-container">
+                <p class="product-price">{{ item.discountedPrice | currency}}<sup class="cancelled-price"><s>{{
+                            item.price
+                            |currency}}</s></sup></p>
+            </div>
+            <img src="assets/prime-icon.png" alt="amazon-prime" class="prime-icon">
+        </div>
+        }@empty {
+        <h2>No data found.</h2>
+        }
+
+    </div>
+
+</div>

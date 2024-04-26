@@ -1,0 +1,103 @@
+@if (totalQuantity > 0) {
+    <div class="amazon-car-banner">
+        <img src="https://m.media-amazon.com/images/G/01/credit/CBCC/acq-landing-page/23-q2-relaunch/hero_card-art_dual-vertical.png"
+            alt="Amazon-Visa">
+    
+        <p>Pay <span>17.02/month for 6 months,</span> interest-free upon approval for Amazon Visa</p>
+    
+        <a href="https://www.amazon.com/gp/product/B007URFTYI?pr=con321&inc=US_UNREC_ACQ_EP_6M&ts=4ab4jcsdnc3j91iogzop6h4dm8z196f&plattr=CBCCPFACQ&place=vc&imp=4428b9e2-018b-4e89-838c-a1582aa00008"
+            target="_blank">Learn more</a>
+    </div>
+}@else {
+    
+}
+
+<div class="main-container">
+
+
+    <div class="cart-container">
+
+        @if (totalQuantity > 0) {
+
+        <h1>Shopping Cart</h1>
+        <div class="price-header">
+            <p>Price</p>
+        </div>
+        @for (product of cartProducts; track $index) {
+        <div class="cart-inner">
+            <div class="image-and-text">
+                <div class="image-area">
+                    <img [src]="product.image" [alt]="product.title">
+                </div>
+                <div class="text-area">
+                    <div class="title-and-brand">
+                        <p class="category">Category: {{product.category}}</p>
+                        <h3>{{product.title}}</h3>
+                        <p>Brand: {{product.brand}}</p>
+                    </div>
+                    <div class="buttons-area">
+                        <div class="incrementer">
+
+                            <button (click)="cartService.decrementQuantity(product.id!)" class="pi pi-minus"></button>
+
+                            <p>{{product.quantity}}</p>
+                            <button (click)="cartService.incrementQuantity(product.id!)" class="pi pi-plus"></button>
+
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <button class="delete-cart-item" (click)="deleteCartItem(product)" type="submit">Delete</button>
+
+                        <div class="divider"></div>
+
+                        <button class="delete-cart-item">Save for later</button>
+
+                        <div class="divider"></div>
+
+                        <button class="delete-cart-item">Share</button>
+                    </div>
+                </div>
+            </div>
+            <div class="price-area">
+                <span>{{product.discountedPrice | currency}}</span>
+            </div>
+        </div>
+        }
+
+        <div class="sub-total">
+            <p>Subtotal ({{totalQuantity}} Items): <b>{{totalPrice | currency}}</b></p>
+        </div>
+        }@else {
+        <div class="empty-cart-container">
+            <div class="empty-image">
+                <img src="https://m.media-amazon.com/images/G/01/cart/empty/kettle-desaturated._CB445243794_.svg"
+                    alt="Empty Cart">
+            </div>
+
+            <div class="checkout-container">
+                <h1>Your Amazon Cart is empty</h1>
+                <p> See Today's Deal</p>
+
+                <input type="submit" value="Click To See Products" routerLink="/products">
+            </div>
+        </div>
+        }
+
+    </div>
+
+    @if (totalPrice > 0) {
+    <div class="checkout-container">
+        <p><i class="pi pi-check"></i> Part of your order qualifies for FREE Shipping. Choose this option at checkout.
+            <a href="">See details</a>
+        </p>
+
+        <span>Subtotal ({{totalQuantity}} Items): <b>{{totalPrice | currency}}</b></span>
+
+        <input type="submit" value="Proceed to checkout" (click)="checkout()" [disabled]="(totalQuantity == 0)">
+    </div>
+    }
+
+
+
+</div>

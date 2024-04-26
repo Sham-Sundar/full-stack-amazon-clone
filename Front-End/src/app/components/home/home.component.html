@@ -1,0 +1,155 @@
+<div class="slideshow">
+    <swiper-container class="mySwiper" navigation="true" centered-slides="true" autoplay-delay="3000"
+        class="swiper-slide">
+        <swiper-slide><img src="/assets/amazon-slider-1.jpg" alt=""></swiper-slide>
+        <swiper-slide><img src="/assets/amazon-slider-2.jpg" alt=""></swiper-slide>
+        <swiper-slide><img src="/assets/amazon-slider-3.jpg" alt=""></swiper-slide>
+    </swiper-container>
+
+</div>
+
+<div class="container">
+    <div class="row1">
+        <div class="box">
+            <h2>Designer handbag for spring</h2>
+            <div class="img-container img1"></div>
+            <a href="http://">Shop Luxury Stores</a>
+        </div>
+
+        <div class="box">
+            <h2>Designer dresses for spring</h2>
+            <div class="img-container img2"></div>
+            <a href="http://">Shop Luxury Stores</a>
+        </div>
+
+        <div class="box">
+            <h2>Celebrate Earth Month</h2>
+            <div class="img-container-4">
+                <div class="div">
+                    <img src="/assets/beauty-sub-image.jpg"
+                        alt="">
+                    <p>Beauty</p>
+                </div>
+                <div class="div">
+                    <img src="/assets/fashion-sub-image.jpg"
+                        alt="">
+                    <p>Fashion</p>
+                </div>
+                <div class="div">
+                    <img src="/assets/cleaning-sub-image.jpg"
+                        alt="">
+                    <p>Cleaning</p>
+                </div>
+                <div class="div">
+                    <img src="/assets/grocery-sub-image.jpg"
+                        alt="">
+                    <p>Grocery</p>
+                </div>
+            </div>
+
+            <a>Shop Luxury Stores</a>
+        </div>
+
+        <div class="sign-in-box">
+            <h2>Sign in for the best experience</h2>
+            <button type="submit" routerLink="/signin">Sign in securely</button>
+        </div>
+
+        <div class="box">
+            <h2>Trending spring styles</h2>
+            <div class="img-container img5"></div>
+            <a href="http://">Discover Amazon Fashion</a>
+        </div>
+
+        <div class="box contain">
+            <h2>Top Deal</h2>
+            <div class="img-container img6"></div>
+            <a href="">See all deals</a>
+        </div>
+
+        <div class="box">
+            <h2>Celebrate Earth Month</h2>
+            <div class="img-container img7"></div>
+            <a href="http://">Explore more sustainable products</a>
+        </div>
+
+        <div class="box">
+            <h2>Join Prime. Unlock deals.</h2>
+            <div class="img-container img8"></div>
+            <a href="http://">Learn more.</a>
+        </div>
+    </div>
+
+    <div class="row2">
+        <h2>Best Sellers in Clothing, Shoes & Jewelry</h2>
+        <div class="image-carousel-container">
+        @for (item of clothingShoesJewelryCategory; track item.id) {
+            <img [src]="item.image" alt="{{item.title}}" (click)="onClickProduct(item.id!)">
+        }
+        </div>
+    </div>
+
+    <div class="row1">
+        <div class="box">
+            <h2>Designer handbag for spring</h2>
+            <div class="img-container img1"></div>
+            <a href="http://">Shop Luxury Stores</a>
+        </div>
+
+        <div class="box">
+            <h2>Designer dresses for spring</h2>
+            <div class="img-container img2"></div>
+            <a href="http://">Shop Luxury Stores</a>
+        </div>
+
+        <div class="box">
+            <h2>Trending spring styles</h2>
+            <div class="img-container img5"></div>
+            <a href="http://">Discover Amazon Fashion</a>
+        </div>
+
+        <div class="box contain">
+            <h2>Top Deal</h2>
+            <div class="img-container img6"></div>
+            <a href="">See all deals</a>
+        </div>
+
+    </div>
+
+    <div class="row2">
+        <h2>Best Sellers in Grocery & Gourmet Food</h2>
+        <div class="image-carousel-container">
+        @for (item of groceryGourmetFoodCategory; track item.id) {
+            <img [src]="item.image" alt="{{item.title}}" (click)="onClickProduct(item.id!)">
+        }
+        </div>
+    </div>
+
+    <div class="row2">
+        <h2>Best Sellers in Grocery & Gourmet Food</h2>
+        <div class="image-carousel-container">
+        @for (item of sportsOutdoorsCategory; track item.id) {
+            <img [src]="item.image" alt="{{item.title}}" (click)="onClickProduct(item.id!)">
+        }
+        </div>
+    </div>
+
+    <div class="row2">
+        <h2>Best Sellers in Grocery & Gourmet Food</h2>
+        <div class="image-carousel-container">
+        @for (item of petSuppliesCategory; track item.id) {
+            <img [src]="item.image" alt="{{item.title}}" (click)="onClickProduct(item.id!)">
+        }
+        </div>
+    </div>
+
+    <div class="row2">
+        <h2>Best Sellers in Grocery & Gourmet Food</h2>
+        <div class="image-carousel-container">
+        @for (item of toolsHomeImprovementCategory; track item.id) {
+            <img [src]="item.image" alt="{{item.title}}" (click)="onClickProduct(item.id!)">
+        }
+        </div>
+    </div>
+
+</div>

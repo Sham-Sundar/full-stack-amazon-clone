@@ -1,0 +1,132 @@
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+}
+
+img {
+    width: 20vw;
+}
+
+.description-area {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 55vw;
+}
+
+.brand {
+    color: #007185;
+    font-size: 15px;
+}
+
+.title {
+    font-weight: 400;
+}
+
+.rating {
+    display: flex;
+    gap: 5px;
+}
+
+.hr {
+    border-top: 0.2px solid #c8c6c6;
+    width: 100%;
+}
+
+.add-to-cart-area {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #c8c6c6;
+    align-self: flex-start;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.cart-btn {
+    border: none;
+    color: black;
+    background-color: #ffd518;
+    padding: 5px 20px;
+    border-radius: 15px;
+    font-size: 12px;
+
+    &&:hover {
+        background-color: #efc50b;
+    }
+}
+
+.list-btn {
+    text-align: start;
+    border: 1px solid rgb(85, 85, 85);
+    color: black;
+    background-color: white;
+    padding: 5px 20px 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+
+    &&:hover {
+        background-color: rgb(235, 235, 235);
+    }
+}
+
+.product-details-table {
+    text-align: left;
+    width: 300px;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    
+}
+
+.table-header {
+    font-size: 20px;
+}
+
+.bullet-points-heading {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.bullet-points {
+    text-align: left;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+}
+
+.bullet-points-details-heading {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.bullet-points-details {
+
+    text-align: left;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    li {
+        list-style: none;
+        display: flex;
+        gap: 5px;
+    }
+
+}

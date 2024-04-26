@@ -1,0 +1,165 @@
+.slideshow {
+    margin-top: -20px;
+
+    img {
+        width: 100vw;
+    }
+
+    /* For adding white gradient at bottom of slider */
+    swiper-slide::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        background: linear-gradient(to top, #eaeded, transparent);
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    margin: -24vw 30px auto 30px;
+    gap: 20px;
+}
+
+.row1 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 10px;
+    background-color: white;
+
+    a {
+        color: #007185;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+
+        &&:hover {
+            color: #C7511F;
+            text-decoration: underline;
+        }
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .img-container {
+        height: 300px;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.contain {
+    .img-container {
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+.img1 {
+    background-image: url(/assets/designer-handbag-for-spring.jpg);
+}
+
+.img2 {
+    background-image: url(/assets/designer-dresses-for-spring.jpg);
+}
+
+.img5 {
+    background-image: url(/assets/trending-spring-styles.jpg);
+}
+
+.img6 {
+    background-image: url(/assets/top-deals.jpg);
+}
+
+.img7 {
+    background-image: url(/assets/celebrate-earth-month.jpg);
+}
+
+.img8 {
+    background-image: url(/assets/join-prime.-unlock-deals..jpg);
+}
+
+.img-container-4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    .div {
+
+        p {
+            font-size: 12px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.sign-in-box {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    background-color: white;
+    align-self: self-start;
+
+    h2 {
+        font-size: 21px;
+    }
+
+    button {
+        padding: 5px 0;
+        border: none;
+        background-color: #FFD814;
+        border-radius: 8px;
+        cursor: pointer;
+
+        &&:hover {
+            background-color: #F7CA00;
+        }
+    }
+}
+
+.row2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .image-carousel-container {
+        display: flex;
+        flex-direction: row;
+        height: 200px;
+        overflow: hidden;
+        width: 100%;
+        gap: 20px;
+
+        img {
+            height: 100%;
+            cursor: pointer;
+        }
+    }
+}

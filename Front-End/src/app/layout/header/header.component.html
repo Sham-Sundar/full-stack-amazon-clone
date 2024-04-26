@@ -1,0 +1,139 @@
+<p-toast></p-toast>
+<div class="header-area">
+
+    <div class="main-header">
+        <div class="web-logo box-hover" routerLink="">
+            <img src="/assets/Amazon-Logo.png" alt="">
+        </div>
+
+        <div class="location box-hover">
+            <div class="icon">
+                <i class="pi pi-map-marker"></i>
+            </div>
+            <div class="address">
+                <span>Deliver to</span>
+                <p>{{userCity}}, {{userCountry}}</p>
+            </div>
+        </div>
+
+        <app-search-bar></app-search-bar>
+
+        <div class="location box-hover">
+            <div class="icon">
+                <img src="/assets/united-states-flag.png" alt="flag" width="20px">
+            </div>
+            <div class="address">
+                <p>EN.</p>
+            </div>
+        </div>
+
+        <div class="location box-hover">
+            <div class="address" routerLink="/signin">
+                <span>Hello, sign in</span>
+                <p>Account & Lists</p>
+            </div>
+        </div>
+
+        <div class="location box-hover">
+            <div class="address">
+                <span>Returns</span>
+                <p>& Orders</p>
+            </div>
+        </div>
+        
+        <div class="location box-hover" routerLink="/cart">
+            <div class="cart-icon" >
+                <img src="/assets/shopping-cart.png" alt="">
+            </div>
+            <div class="address">
+                <p>Cart ({{itemQuantity}})</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="sub-header">
+        <div class="card flex justify-content-center">
+            <p-sidebar [(visible)]="sidebarVisible">
+                <ng-template pTemplate="header" class="side-bar-header">
+                    <i class="pi pi-user"></i>
+                    <span><strong>Hello, sign in</strong></span>
+                </ng-template>
+                <ng-template pTemplate="content">
+                    <div class="p-sidebar-content-row-heading">Digital Content & Devices</div>
+                    <div class="p-sidebar-content-row">
+                        <p>Amazon Music</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row">
+                        <p>Kindle E-readers & Books</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row">
+                        <p>Amazon Appstore</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="hmenu-separater"></div>
+                    <div class="p-sidebar-content-row-heading">Shop by Department</div>
+                    <div class="p-sidebar-content-row">
+                        <p>Electronics</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row">
+                        <p>Computers</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row">
+                        <p>Smart Home</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row">
+                        <p>Arts & Crafts</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row-all">
+                        <p>Sell all</p><i class="pi pi-angle-down"></i>
+                    </div>
+                    <div class="hmenu-separater"></div>
+                    <div class="p-sidebar-content-row-heading">Programs & Features</div>
+                    <div class="p-sidebar-content-row">
+                        <p>Gift Cards</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row">
+                        <p>Shop By Interest</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row">
+                        <p>Amazon Live</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row">
+                        <p>International Shopping</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row-all">
+                        <p>Sell all</p><i class="pi pi-angle-down"></i>
+                    </div>
+                    <div class="hmenu-separater"></div>
+                    <div class="p-sidebar-content-row-heading">Help & Settings</div>
+                    <div class="p-sidebar-content-row">
+                        <p>Your Account</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row">
+                        <p class="flex"> <i class="pi pi-globe"></i> English</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row">
+                        <p class="flex"> <img src="/assets/united-states-flag.png" alt="" srcset="">United States</p><i
+                            class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row">
+                        <p>Customer Service</p><i class="pi pi-angle-right"></i>
+                    </div>
+                    <div class="p-sidebar-content-row" routerLink="/signin">
+                        <p>Sign in</p><i class="pi pi-angle-right"></i>
+                    </div>
+                </ng-template>
+            </p-sidebar>
+            <a (click)="sidebarVisible = true" class="box-hover pi-bar">
+                <i class="pi pi-bars"></i>
+                <span><strong>All</strong></span>
+            </a>
+        </div>
+        <a class="box-hover">Today's Deals</a>
+        <a class="box-hover">Customer Service</a>
+        <a class="box-hover">Registry</a>
+        <a class="box-hover">Gift Cards</a>
+        <a routerLink="sell-with-amazon" class="box-hover">Sell</a>
+    </div>
+
+</div>

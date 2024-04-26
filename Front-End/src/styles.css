@@ -1,0 +1,123 @@
+/* PrimeNG Imports */
+@import "primeng/resources/themes/lara-light-amber/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+*{
+    box-sizing: border-box;
+}
+
+/* Doing this so that it doesn't interfere with primeng components */
+body, h1, h2, h3, p{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #EAEDED;
+    min-height: 100vh;
+}
+
+
+  
+
+/* Rating Customization */
+@layer reset, primeng;
+
+@layer reset {
+    .p-rating-icon{
+        color: #FFA41C;
+    }
+    .p-sidebar-header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: #232F3E;
+        color: white;
+        font-size: 18px;
+        height: 50px;
+        padding-left: 30px;
+
+        .p-sidebar-close-icon{
+            color: white;
+
+            &&:hover{
+                color: #232F3E;
+            }
+        }
+    }
+    .p-sidebar-content{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+
+        .p-sidebar-content-row-heading{
+            font-size: 18px;
+            font-weight: 800;
+            color: #232F3E;
+            padding: 15px 30px 10px 30px;
+        }
+
+        .p-sidebar-content-row{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 30px;
+            font-size: 14px;
+            color: #232F3E;
+            cursor: pointer;
+
+            &&:hover{
+                background-color: #EAEDED;
+                
+            }
+
+            img{
+                width: 20px;
+            }
+        }
+
+        .p-sidebar-content-row-all{
+            display: flex;
+            align-items: center;
+            padding: 12px 30px;
+            font-size: 14px;
+            color: #232F3E;
+            gap: 10px;
+
+            &&:hover{
+                background-color: #EAEDED;
+            }
+        }
+
+        hr{
+            width: 100%;
+        }
+
+        .hmenu-separater{
+            border-top: 0.8px solid lightgrey;
+            width: 100%;
+        }
+
+        .flex{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+    .p-button{
+        padding: 0.6rem 1.5rem;
+        color: #232F3E;
+
+        &&:hover{
+            background-color: #FF9900;
+            border: 1px solid #FF9900;
+            box-shadow: 0 0 10px 0 rgb(177, 176, 176);
+        }
+    }
+
+    p-divider{
+        width: 100%;    
+    }
+}
