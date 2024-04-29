@@ -3,7 +3,10 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 
 
-const app = express()
+const app = express();
+
+// Cookie-Parser is used to set and read cookies of user's browser securely
+app.use(cookieParser())
 
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
@@ -24,7 +27,11 @@ app.use(express.urlencoded({
 // for storing some images on local server for temporary basis
 app.use(express.static("public"))
 
-// Cookie-Parser is used to set and read cookies of user's browser securely
-app.use(cookieParser())
+
+// Routes import
+import { userRouter } from "./routes/user.route.js";
+
+// Routes declaration
+app.use("/api/v1/user", userRouter)
 
 export { app }

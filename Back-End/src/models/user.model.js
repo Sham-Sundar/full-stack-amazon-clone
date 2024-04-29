@@ -6,7 +6,6 @@ const userSchema = new Schema({
     fullName: {
         type: String,
         required: true,
-        trim: true,
         index: true
     },
     email: {
@@ -39,11 +38,17 @@ const userSchema = new Schema({
 
 // Here we are converting password into hash using bcrypt
 userSchema.pre("save", async function (next) {
-    if(!this.isModified("password")){
-        return next()
+    if (!this.isModified("password")) {
+        return next();
     }
-    this.password = bcrypt.hash(this.password, 10)
-    next()
+    try {
+        this.password = await bcrypt.hash(this.password, 10)
+        next();
+
+    } catch (error) {
+        console.error("Error hashing password:", error);
+        next(error);
+    }
 })
 
 // We are creating this method to compare password which we can use anywhere
@@ -52,12 +57,11 @@ userSchema.methods.isPasswordCorrect = async function (password) {
 }
 
 // For generating access token
-userSchema.methods.generateAccessToken = async function () {
-    jsonwebtoken.sign(
+userSchema.methods.generateAccessToken = function () {
+    return jsonwebtoken.sign(
         {
             _id: this._id,
             email: this.email,
-            userName: this.userName,
             fullName: this.fullName
         },
         process.env.ACCESS_TOKEN_SECRET,
@@ -68,13 +72,10 @@ userSchema.methods.generateAccessToken = async function () {
 }
 
 // For generating refresh token
-userSchema.methods.generateRefreshToken = async function () {
-    jsonwebtoken.sign(
+userSchema.methods.generateRefreshToken = function () {
+    return jsonwebtoken.sign(
         {
-            _id: this._id,
-            email: this.email,
-            userName: this.userName,
-            fullName: this.fullName
+            _id: this._id
         },
         process.env.REFRESH_TOKEN_SECRET,
         {
