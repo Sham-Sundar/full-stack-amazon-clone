@@ -5,23 +5,30 @@ import jsonwebtoken from "jsonwebtoken";
 
 export const verifyJWT = asyncHandler(async (req, _, next) => {
     try {
-        const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "")
+        const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
 
         if (!token) {
-            throw new ApiError(401, "Unauthorized Request")
+            throw new ApiError(401, "Unauthorized Request");
         }
 
-        const decodedTokenData = jsonwebtoken.verify(token, process.env.ACCESS_TOKEN_SECRET)
+        const decodedTokenData = jsonwebtoken.verify(token, process.env.ACCESS_TOKEN_SECRET);
 
-        const user = await User.findById(decodedTokenData?._id).select("-password -refreshToken")
-
-        if (!user) {
-            throw new ApiError(401, "Invalid Access Token")
+        let account;
+        if (decodedTokenData.type === 'user') {
+            account = await User.findById(decodedTokenData._id).select("-password -refreshToken");
+        } else if (decodedTokenData.type === 'seller') {
+            account = await Seller.findById(decodedTokenData._id).select("-password -refreshToken");
+        } else {
+            throw new ApiError(401, "Invalid user type");
         }
 
-        req.user = user;
-        next()
+        if (!account) {
+            throw new ApiError(401, "Invalid Access Token");
+        }
+
+        req.account = account;
+        next();
     } catch (error) {
-    
-            throw new ApiError(401, error?.message || "Invalid Access Token")
-    }})
+        throw new ApiError(401, error?.message || "Invalid Access Token");
+    }
+});

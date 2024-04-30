@@ -2,22 +2,8 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { User } from "../models/user.model.js";
+import {generateAccessAndRefreshToken} from "../utils/token.js";
 
-const generateAccessAndRefreshToken = async (userId) => {
-    try {
-        const user = await User.findById(userId)
-        const accessToken = user.generateAccessToken()
-        const refreshToken = user.generateRefreshToken()
-
-        user.refreshToken = refreshToken
-        await user.save({ validateBeforeSave: false })
-
-        return { accessToken, refreshToken }
-
-    } catch (error) {
-        throw new ApiError(500, "Something went wrong while generating tokens")
-    }
-}
 
 const registerUser = asyncHandler(async (req, res) => {
     const { fullName, email, password } = req.body
@@ -63,7 +49,7 @@ const loginUser = asyncHandler(async (req, res) => {
         throw new ApiError(401, "Incorrect password")
     }
 
-    const { accessToken, refreshToken } = await generateAccessAndRefreshToken(userFound._id)
+    const { accessToken, refreshToken } = await generateAccessAndRefreshToken(userFound._id, 'user')
 
     if (!accessToken || !refreshToken) {
         throw new ApiError(500, "Failed to generate tokens");
@@ -87,7 +73,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
 const logoutUser = asyncHandler(async (req, res) => {
     await User.findByIdAndUpdate(
-        req.user._id,
+        req.account._id,
         {
             $unset: {
                 refreshToken: 1
@@ -120,7 +106,7 @@ const updateAddress = asyncHandler(async (req, res) => {
     }
 
     const user = await User.findByIdAndUpdate(
-        req.user._id,
+        req.account._id,
         {
             $set: {
                 "address.0.street": street,
@@ -153,7 +139,7 @@ const updatePassword = asyncHandler(async (req, res) => {
     }
 
     const user = await User.findByIdAndUpdate(
-        req.user._id,
+        req.account._id,
         {
             $set: {
                 password: newPassword
