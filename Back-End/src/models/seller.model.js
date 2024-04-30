@@ -19,10 +19,12 @@ const sellerSchema = new Schema({
         required: [true, "Password is required"],
         trim: true
     },
-    products: {
-        type: Schema.Types.ObjectId,
-        ref: "Product"
-    },
+    products: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Product"
+        }
+    ],
     refreshToken: {
         type: String //from bcrypt
     }

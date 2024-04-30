@@ -56,10 +56,10 @@ const productSchema = new Schema({
         type: String, // Cloudinary Url
         required: true
     },
-    review: {
+    review: [{
         type: Schema.Types.ObjectId,
         ref: "Review"
-    },
+    }],
     averageRating: {
         type: Number
     }

@@ -25,10 +25,10 @@ const userSchema = new Schema({
         state: String,
         postalCode: String,
     }],
-    order: {
+    order: [{
         type: Schema.Types.ObjectId,
         ref: "Order"
-    },
+    }],
     refreshToken: {
         type: String //from bcrypt
     }
