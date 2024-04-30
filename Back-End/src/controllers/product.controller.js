@@ -2,7 +2,8 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import { Product } from "../models/product.model.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
-import { uploadOnCloudinary } from "../utils/cloudinary.js"
+import { uploadOnCloudinary } from "../utils/cloudinary.js";
+import fs from "fs";
 
 const addProduct = asyncHandler(async (req, res) => {
     const { title, description, price, discountedPrice, category, brand, stock } = req.body
@@ -42,6 +43,8 @@ const addProduct = asyncHandler(async (req, res) => {
     if (!productAdded) {
         throw new ApiError(401, "Something went wrong while adding product")
     }
+
+    fs.unlinkSync(imageLocalPath)
 
     return res
     .status(200)

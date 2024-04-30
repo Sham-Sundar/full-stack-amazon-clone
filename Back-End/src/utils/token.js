@@ -1,9 +1,10 @@
 import jsonwebtoken from 'jsonwebtoken';
 import { User } from "../models/user.model.js";
 import { ApiError } from "./ApiError.js";
+import { Seller } from '../models/seller.model.js';
 
-// Private helper function to generate an access token
-const generateAccessToken = (user, userType) => {
+
+export const generateAccessToken = (user, userType) => {
     return jsonwebtoken.sign(
         {
             _id: user._id,
@@ -34,11 +35,14 @@ const generateRefreshToken = (user, userType) => {
 
 // Public function to generate both access and refresh tokens, and save the refresh token
 export const generateAccessAndRefreshToken = async (userId, userType) => {
+
+
+    
     try {
         let account;
-        if (userType === 'user') {
+        if (userType === "user") {
             account = await User.findById(userId);
-        } else if (userType === 'seller') {
+        } else if (userType === "seller") {
             account = await Seller.findById(userId); // If you have a seller model
         } else {
             throw new ApiError(400, "Invalid user type");
