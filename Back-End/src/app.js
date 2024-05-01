@@ -27,6 +27,11 @@ app.use(express.urlencoded({
 // for storing some images on local server for temporary basis
 app.use(express.static("public"))
 
+// 
+app.get('/', (req, res) => {
+    res.send('Hello from your Backend!');
+});
+
 
 // Routes import
 import { userRouter } from "./routes/user.route.js"; // User
