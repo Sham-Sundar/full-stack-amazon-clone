@@ -32,11 +32,13 @@ app.use(express.static("public"))
 import { userRouter } from "./routes/user.route.js"; // User
 import { sellerRouter } from "./routes/seller.route.js"; // Seller
 import { productRouter } from "./routes/product.route.js"; // Product
+import { orderRouter } from "./routes/order.route.js"; // Order
 
 
 // Routes declaration
 app.use("/api/v1/user", userRouter) // User
 app.use("/api/v1/seller", sellerRouter) // Seller
 app.use("/api/v1/product", productRouter) // Product
+app.use("/api/v1/order", orderRouter) // Order
 
 export { app }
