@@ -41,4 +41,4 @@ app.use("/api/v1/seller", sellerRouter) // Seller
 app.use("/api/v1/product", productRouter) // Product
 app.use("/api/v1/order", orderRouter) // Order
 
-export { app }
+export  {app}
