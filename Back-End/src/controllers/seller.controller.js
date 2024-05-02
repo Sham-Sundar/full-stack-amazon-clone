@@ -62,7 +62,7 @@ const loginSeller = asyncHandler(async (req, res) => {
     const options = {
         httpOnly: true,
         sameSite: 'strict',
-        maxAge: 3600*1000
+        secure: true
     }
 
     return res
