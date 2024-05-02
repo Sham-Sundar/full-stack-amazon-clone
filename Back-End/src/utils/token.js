@@ -4,8 +4,8 @@ import { ApiError } from "./ApiError.js";
 import { Seller } from '../models/seller.model.js';
 
 
-const generateAccessToken = (user, userType) => {
-    return jsonwebtoken.sign(
+export const generateAccessToken = async (user, userType) => {
+    return await jsonwebtoken.sign(
         {
             _id: user._id,
             email: user.email,
@@ -20,8 +20,8 @@ const generateAccessToken = (user, userType) => {
 };
 
 // Private helper function to generate a refresh token
-const generateRefreshToken = (user, userType) => {
-    return jsonwebtoken.sign(
+const generateRefreshToken = async (user, userType) => {
+    return await jsonwebtoken.sign(
         {
             _id: user._id,
             type: userType
