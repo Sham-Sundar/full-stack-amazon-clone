@@ -163,48 +163,48 @@ const getUserOrders = asyncHandler(async (req, res) => {
     
 })
 
-const updateAccessToken = asyncHandler(async (req, res) => {
-    const incomingRefreshToken = req.cookies.refreshToken || req.body.refreshToken
+// const updateAccessToken = asyncHandler(async (req, res) => {
+//     const incomingRefreshToken = req.cookies.refreshToken || req.body.refreshToken
 
-    if (!incomingRefreshToken) {
-        throw new ApiError(404, "Unauthorized request")
-    }
+//     if (!incomingRefreshToken) {
+//         throw new ApiError(404, "Unauthorized request")
+//     }
 
-    const decodedTokenDetail = jsonwebtoken.verify(incomingRefreshToken, process.env.REFRESH_TOKEN_SECRET)
+//     const decodedTokenDetail = jsonwebtoken.verify(incomingRefreshToken, process.env.REFRESH_TOKEN_SECRET)
 
-    if (!decodedTokenDetail) {
-        throw new ApiError(404, "Invalid refresh token")
-    }
+//     if (!decodedTokenDetail) {
+//         throw new ApiError(404, "Invalid refresh token")
+//     }
 
-    const user = await User.findById(decodedTokenDetail?._id)
+//     const user = await User.findById(decodedTokenDetail?._id)
 
-    if (!user) {
-        throw new ApiError(401, "Invalid token")
-    }
+//     if (!user) {
+//         throw new ApiError(401, "Invalid token")
+//     }
 
-    if (incomingRefreshToken !== user?.refreshToken) {
-        throw new ApiError(401, "Invalid token")
-    }
+//     if (incomingRefreshToken !== user?.refreshToken) {
+//         throw new ApiError(401, "Invalid token")
+//     }
 
-    const accessToken = generateAccessToken(user, 'user')
+//     const accessToken = generateAccessToken(user, 'user')
 
-    const options = {
-        httpOnly: true,
-        secure: true
-    }
+//     const options = {
+//         httpOnly: true,
+//         secure: true
+//     }
 
-    return res
-        .status(200)
-        .cookie("accessToken", accessToken, options)
-        .cookie("refreshToken", incomingRefreshToken, options)
-        .json(
-            new ApiResponse(
-                200,
-                "Access Token Refreshed Successfully",
-                { accessToken, incomingRefreshToken }
-            )
-        )
-})
+//     return res
+//         .status(200)
+//         .cookie("accessToken", accessToken, options)
+//         .cookie("refreshToken", incomingRefreshToken, options)
+//         .json(
+//             new ApiResponse(
+//                 200,
+//                 "Access Token Refreshed Successfully",
+//                 { accessToken, incomingRefreshToken }
+//             )
+//         )
+// })
 
 const deleteUserAccount = asyncHandler(async (req, res) => {
     try {
