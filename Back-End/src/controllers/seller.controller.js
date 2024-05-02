@@ -60,14 +60,15 @@ const loginSeller = asyncHandler(async (req, res) => {
     const loggedInSeller = await Seller.findById(sellerFound._id).select("-password -refreshToken")
 
     const options = {
+        expires: new(Date.now()+50000),
         httpOnly: true,
         secure: true
     }
 
     return res
         .status(200)
-        .cookieParser("accessToken", accessToken, options)
-        .cookieParser("refreshToken", refreshToken, options)
+        .cookie("accessToken", accessToken, options)
+        .cookie("refreshToken", refreshToken, options)
         .json(
             new ApiResponse(200, "Logged in successfully", { seller: loggedInSeller, accessToken, refreshToken })
         )
