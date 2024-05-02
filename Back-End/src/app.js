@@ -9,7 +9,7 @@ const app = express();
 app.use(cookieParser())
 
 app.use(cors({
-    origin: 'https://mean-amazon-clone.vercel.app/',
+    origin: process.env.CORS_ORIGIN,
     credentials: true
 }))
 

@@ -61,8 +61,7 @@ const loginSeller = asyncHandler(async (req, res) => {
 
     const options = {
         httpOnly: true,
-        secure: true,
-        sameSite: 'none'
+        secure: true
     }
 
     return res
