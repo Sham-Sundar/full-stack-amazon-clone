@@ -5,8 +5,6 @@ import cors from "cors";
 
 const app = express();
 
-// Cookie-Parser is used to set and read cookies of user's browser securely
-app.use(cookieParser())
 
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
@@ -17,6 +15,9 @@ app.use(cors({
 app.use(express.json({
     limit: "16kb"
 }))
+
+// Cookie-Parser is used to set and read cookies of user's browser securely
+app.use(cookieParser())
 
 // This is used to encode the decoded url
 app.use(express.urlencoded({
