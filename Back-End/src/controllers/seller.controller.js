@@ -60,7 +60,6 @@ const loginSeller = asyncHandler(async (req, res) => {
     const loggedInSeller = await Seller.findById(sellerFound._id).select("-password -refreshToken")
 
     const options = {
-        expires: new(Date.now()+50000),
         httpOnly: true,
         secure: true
     }
