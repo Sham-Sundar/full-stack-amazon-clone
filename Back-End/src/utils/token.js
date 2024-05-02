@@ -4,7 +4,7 @@ import { ApiError } from "./ApiError.js";
 import { Seller } from '../models/seller.model.js';
 
 
-export const generateAccessToken = (user, userType) => {
+const generateAccessToken = (user, userType) => {
     return jsonwebtoken.sign(
         {
             _id: user._id,
