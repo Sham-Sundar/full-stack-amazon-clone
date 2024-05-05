@@ -77,7 +77,7 @@ const addProduct = asyncHandler(async (req, res) => {
     }
 
     // Check if user is authorized to add products
-    if (req.account.type !== "seller") {
+    if (req.account.type === "user") {
         throw new ApiError(401, "Unauthorized request, you are not a seller");
     }
 
