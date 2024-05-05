@@ -19,7 +19,6 @@ const uploadOnCloudinary = async (localFilePath) => {
             return response;
         }
     } catch (error) {
-        // if we are unable to upload file on cloudinary successfully then this will remove file from local server
         fs.unlinkSync(localFilePath)
         return null;
     }
