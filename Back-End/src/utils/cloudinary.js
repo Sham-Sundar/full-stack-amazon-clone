@@ -9,6 +9,7 @@ cloudinary.config({
 });
 
 const uploadOnCloudinary = async (localFilePath) => {
+    console.log("Local file path:", localFilePath);
     try {
         if (!localFilePath) {
             console.error("File path not found (cloudinary.js)");
