@@ -66,12 +66,12 @@ import { User } from "../models/user.model.js";
 import { ApiError } from "./ApiError.js";
 import { Seller } from '../models/seller.model.js';
 
-export const generateAccessToken = async (user, userType) => {
+export const generateAccessToken = async (account, userType) => {
     return jsonwebtoken.sign(
         {
-            _id: user._id,
-            email: user.email,
-            fullName: user.fullName,
+            _id: account._id,
+            email: account.email,
+            fullName: account.fullName,
             type: userType
         },
         process.env.ACCESS_TOKEN_SECRET,
@@ -81,10 +81,10 @@ export const generateAccessToken = async (user, userType) => {
     );
 };
 
-const generateRefreshToken = async (user, userType) => {
+const generateRefreshToken = async (account, userType) => {
     return jsonwebtoken.sign(
         {
-            _id: user._id,
+            _id: account._id,
             type: userType
         },
         process.env.REFRESH_TOKEN_SECRET,

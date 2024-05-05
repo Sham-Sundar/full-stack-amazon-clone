@@ -9,12 +9,12 @@ import fs from "fs";
 const addProduct = asyncHandler(async (req, res) => {
     const { title, description, price, discountedPrice, category, brand, stock } = req.body;
 
-    if ([title, description, price, category, brand, stock].some((field) => field.trim() === "")) {
+    if ((title && description && price && category && brand && stock) === "") {
         throw new ApiError(401, "All fields are required");
     }
 
-    if (req.account.type !== "seller") {
-        throw new ApiError(401, "Unauthorized request");
+    if ((req.account.type)==="user") {
+        throw new ApiError(401, "Unauthorized Request, you are not seller");
     }
 
     const existedProduct = await Product.findOne({ title });
@@ -25,13 +25,13 @@ const addProduct = asyncHandler(async (req, res) => {
 
     const imageLocalPath = req.files?.productImage[0]?.path;
 
-    if (!imageLocalPath) {
+    if (!(imageLocalPath)) {
         throw new ApiError(401, "Image file is required");
     }
 
     const productImage = await uploadOnCloudinary(imageLocalPath);
 
-    if (!productImage) {
+    if (!(productImage)) {
         throw new ApiError(401, "Product image is required");
     }
 
@@ -74,12 +74,12 @@ const updateProduct = asyncHandler(async (req, res) => {
     } = req.body;
     const { id } = req.params;
 
-    if ([title, description, price, category, brand, stock].some(field => field.trim() === "")) {
+    if (!(title && description && price && category && brand && stock)) {
         throw new ApiError(401, "All fields are required");
     }
 
-    if (!req.account.type !== 'seller') {
-        throw new ApiError(401, "Unauthorized request");
+    if ((req.account.type) === 'user') {
+        throw new ApiError(401, "Unauthorized request, you are not seller");
     }
 
     const product = await Product.findById(id);
@@ -124,18 +124,19 @@ const updateProduct = asyncHandler(async (req, res) => {
 
 const deleteProduct = asyncHandler(async (req, res) => {
 
-    if (req.account.type !== 'seller') {
+    if ((req.account.type) === "user") {
         throw new ApiError(401, "Unauthorized request");
     }
 
-    const { id } = req.params;
+    const {id } = req.params;
+    console.log(req.params);
 
-    if (!id) {
+    if (!(id)) {
         throw new ApiError(400, "Invalid Product Id");
     }
 
     const deletedProduct = await Product.findByIdAndDelete(id);
-    if (!deletedProduct) {
+    if (!(deletedProduct)) {
         throw new ApiError(404, "Product not found");
     }
 
