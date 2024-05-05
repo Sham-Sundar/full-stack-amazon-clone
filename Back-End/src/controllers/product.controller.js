@@ -8,12 +8,15 @@ import fs from "fs";
 
 const addProduct = asyncHandler(async (req, res) => {
     const { title, description, price, discountedPrice, category, brand, stock } = req.body;
+    const numericPrice = parseFloat(price);
+    const numericDiscountedPrice = parseFloat(discountedPrice);
+    const numericStock = parseInt(stock);
 
     if ((title && description && price && category && brand && stock) === "") {
         throw new ApiError(401, "All fields are required");
     }
 
-    if ((req.account.type)==="user") {
+    if ((req.account.type) === "user") {
         throw new ApiError(401, "Unauthorized Request, you are not seller");
     }
 
@@ -38,12 +41,12 @@ const addProduct = asyncHandler(async (req, res) => {
     const product = await Product.create({
         title,
         description,
-        price,
-        discountedPrice,
+        price: numericPrice,
+        discountedPrice: numericDiscountedPrice,
         category,
         brand,
         image: productImage.url,
-        stock,
+        stock: numericStock,
         seller: req.account._id,
     });
 
@@ -128,7 +131,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
         throw new ApiError(401, "Unauthorized request");
     }
 
-    const {id } = req.params;
+    const { id } = req.params;
     console.log(req.params);
 
     if (!(id)) {
@@ -154,7 +157,7 @@ const getAllProducts = asyncHandler(async (req, res) => {
 })
 
 const getProductById = asyncHandler(async (req, res) => {
-    const {id} = req.params
+    const { id } = req.params
 
     if (!id) {
         throw new ApiError(401, "Product id is required")
@@ -167,10 +170,10 @@ const getProductById = asyncHandler(async (req, res) => {
     }
 
     return res
-    .status(200)
-    .json(
-        new ApiResponse(200, "Product Fetched Successfully", product)
-    )
+        .status(200)
+        .json(
+            new ApiResponse(200, "Product Fetched Successfully", product)
+        )
 })
 
 export { addProduct, updateProduct, deleteProduct, getAllProducts, getProductById };
