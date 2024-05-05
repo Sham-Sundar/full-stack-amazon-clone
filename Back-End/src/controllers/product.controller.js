@@ -6,43 +6,104 @@ import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { Seller } from "../models/seller.model.js";
 import fs from "fs";
 
+// const addProduct = asyncHandler(async (req, res) => {
+//     const { title, description, price, discountedPrice, category, brand, stock } = req.body;
+//     const numericPrice = parseFloat(price);
+//     const numericDiscountedPrice = parseFloat(discountedPrice);
+//     const numericStock = parseInt(stock);
+
+//     if ((title && description && price && category && brand && stock) === "") {
+//         throw new ApiError(401, "All fields are required");
+//     }
+
+//     if ((req.account.type) === "user") {
+//         throw new ApiError(401, "Unauthorized Request, you are not seller");
+//     }
+
+//     const existedProduct = await Product.findOne({ title });
+
+//     if (existedProduct) {
+//         throw new ApiError(401, "Product already exists");
+//     }
+
+//     const imageLocalPath = req.files?.productImage[0]?.path;
+
+//     if (!(imageLocalPath)) {
+//         throw new ApiError(401, "Image file is required");
+//     }
+
+//     const productImage = await uploadOnCloudinary(imageLocalPath);
+
+//     if (!(productImage)) {
+//         throw new ApiError(401, "Product image is required");
+//     }
+
+//     const product = await Product.create({
+//         title,
+//         description,
+//         price: numericPrice,
+//         discountedPrice: numericDiscountedPrice,
+//         category,
+//         brand,
+//         image: productImage.url,
+//         stock: numericStock,
+//         seller: req.account._id,
+//     });
+
+//     await Seller.findByIdAndUpdate(req.account._id, {
+//         $push: { products: product._id },
+//     });
+
+//     const productAdded = await Product.findById(product._id);
+
+//     if (!productAdded) {
+//         throw new ApiError(401, "Something went wrong while adding product");
+//     }
+
+//     fs.unlinkSync(imageLocalPath);
+
+//     return res.status(200).json(new ApiResponse(200, "Product added successfully", productAdded));
+// });
+
 const addProduct = asyncHandler(async (req, res) => {
     const { title, description, price, discountedPrice, category, brand, stock } = req.body;
     const numericPrice = parseFloat(price);
     const numericDiscountedPrice = parseFloat(discountedPrice);
     const numericStock = parseInt(stock);
 
-    if ((title && description && price && category && brand && stock) === "") {
+    // Validate required fields
+    if (!title || !description || isNaN(numericPrice) || isNaN(numericStock)) {
         throw new ApiError(401, "All fields are required");
     }
 
-    if ((req.account.type) === "user") {
-        throw new ApiError(401, "Unauthorized Request, you are not seller");
+    // Check if user is authorized to add products
+    if (req.account.type !== "seller") {
+        throw new ApiError(401, "Unauthorized request, you are not a seller");
     }
 
+    // Check if product with the same title already exists
     const existedProduct = await Product.findOne({ title });
-
     if (existedProduct) {
         throw new ApiError(401, "Product already exists");
     }
 
+    // Upload product image to Cloudinary
     const imageLocalPath = req.files?.productImage[0]?.path;
-
-    if (!(imageLocalPath)) {
+    if (!imageLocalPath) {
         throw new ApiError(401, "Image file is required");
     }
 
     const productImage = await uploadOnCloudinary(imageLocalPath);
-
-    if (!(productImage)) {
-        throw new ApiError(401, "Product image is required");
+    if (!productImage) {
+        throw new ApiError(401, "Failed to upload product image");
     }
 
+    // Create new product
     const product = await Product.create({
         title,
         description,
         price: numericPrice,
-        discountedPrice: numericDiscountedPrice,
+        discountedPrice: numericDiscountedPrice || null, // Consider handling null if not provided
         category,
         brand,
         image: productImage.url,
@@ -50,20 +111,16 @@ const addProduct = asyncHandler(async (req, res) => {
         seller: req.account._id,
     });
 
-    await Seller.findByIdAndUpdate(req.account._id, {
-        $push: { products: product._id },
-    });
+    // Update seller's products list
+    await Seller.findByIdAndUpdate(req.account._id, { $push: { products: product._id } });
 
-    const productAdded = await Product.findById(product._id);
-
-    if (!productAdded) {
-        throw new ApiError(401, "Something went wrong while adding product");
-    }
-
+    // Clean up - remove local image file
     fs.unlinkSync(imageLocalPath);
 
-    return res.status(200).json(new ApiResponse(200, "Product added successfully", productAdded));
+    // Return success response
+    return res.status(200).json(new ApiResponse(200, "Product added successfully", product));
 });
+
 
 const updateProduct = asyncHandler(async (req, res) => {
     const {
