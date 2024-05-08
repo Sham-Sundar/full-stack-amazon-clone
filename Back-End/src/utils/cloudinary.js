@@ -8,23 +8,6 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-// const uploadOnCloudinary = async (localFilePath) => {
-//     console.log("Local file path:", localFilePath);
-//     try {
-//         if (!localFilePath) {
-//             console.error("File path not found (cloudinary.js)");
-//         } else {
-//            const response = await cloudinary.uploader.upload(localFilePath,
-//                 { resource_type: "auto" });
-//             console.log("File uploaded successfully on cloudinary", response.url);
-//             return response;
-//         }
-//     } catch (error) {
-//         fs.unlinkSync(localFilePath)
-//         return null;
-//     }
-// }
-
 const uploadOnCloudinary = async (localFilePath) => {
     try {
         if (!localFilePath) {
