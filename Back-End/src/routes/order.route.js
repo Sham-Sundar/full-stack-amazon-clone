@@ -1,13 +1,12 @@
 import { Router } from "express";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
-import { createOrder } from "../controllers/order.controller.js";
+import { createPaymentIntent, createOrder, getUserOrders } from "../controllers/order.controller.js";
 
-
-const orderRouter = Router()
+const orderRouter = Router();
 
 // Secured Routes
-orderRouter.route("/create-order").post(verifyJWT, createOrder)
+orderRouter.post('/create-payment-intent',verifyJWT, createPaymentIntent);
+orderRouter.post('/create-order', verifyJWT, createOrder);
+orderRouter.get('/get-orders/:userId', verifyJWT, getUserOrders);
 
-export { orderRouter }
-
-
+export { orderRouter };

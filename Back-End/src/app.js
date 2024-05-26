@@ -29,18 +29,16 @@ app.use(express.urlencoded({
 // for storing some images on local server for temporary basis
 app.use(express.static("public"))
 
-// 
+// Server Response
 app.get('/', (req, res) => {
     res.send('<h4>Hello from your Backend!</h4?');
 });
-
 
 // Routes import
 import { userRouter } from "./routes/user.route.js"; // User
 import { sellerRouter } from "./routes/seller.route.js"; // Seller
 import { productRouter } from "./routes/product.route.js"; // Product
 import { orderRouter } from "./routes/order.route.js"; // Order
-
 
 // Routes declaration
 app.use("/api/v1/user", userRouter) // User
